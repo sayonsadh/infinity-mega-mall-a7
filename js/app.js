@@ -64,16 +64,15 @@ const updateTaxAndCharge = () => {
     setInnerText("delivery-charge", 30);
     setInnerText("total-tax", priceConverted * 0.2);
   }
-  else if (priceConverted > 400) {
+  if (priceConverted > 400) {
     setInnerText("delivery-charge", 50);
     setInnerText("total-tax", priceConverted * 0.3);
   }
-  else if (priceConverted > 500) {
+  if (priceConverted > 500) {
     setInnerText("delivery-charge", 60);
     setInnerText("total-tax", priceConverted * 0.4);
   }
 };
-
 
 //grandTotal update function
 const updateTotal = () => {
@@ -82,5 +81,4 @@ const updateTotal = () => {
     getInputValue("total-tax");
   document.getElementById("total").innerText = parseFloat(grandTotal).toFixed(2);
 };
-updateTaxAndCharge();
 loadProducts();
